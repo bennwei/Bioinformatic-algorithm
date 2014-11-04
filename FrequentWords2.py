@@ -1,6 +1,6 @@
 def FrequentWords2(DNA, k):
     kmers = {} 
-    for i in range (0, len(DNA)-k):
+    for i in range (0, (len(DNA)-k)):
         kmer = DNA[i:i+k]
         if kmers.has_key(kmer):
             kmers[kmer] += 1

@@ -2,8 +2,8 @@ def findClump(k, seq, L, t):
         """Generate the indices of the (possibly overlapping) occurrences of
     pattern in text. For example:
 
-    >>> findClump(k=5, 'CGGACTCGACAGATGTGAAGAACGACAATGTGAAGAC\n
-                    TCGACACGACAGAGTGAAGAGAAGAGGAAACATTGTAA', L=50, t=4)
+    >>> findClump(5, 'CGGACTCGACAGATGTGAAGAACGACAATGTGAAGAC\n
+                    TCGACACGACAGAGTGAAGAGAAGAGGAAACATTGTAA', 50, 4)
     [CGACA, GAAGA]
 
     """
@@ -23,7 +23,7 @@ def findClump(k, seq, L, t):
         for kmer in kmer_dict:         
             # look for kmer repeated t times with an index distance of L
             if kmer_dict[kmer][0] >= t and kmer not in list:
-                for n in range(len(kmer_dict[kmer] - t)):
+                for n in range((len(kmer_dict[kmer]) - t)):
                     if kmer_dict[kmer][n+t-1] - kmer_dict[kmer][n] <= L:
                         if kmer not in list:
                             list.append(kmer)
