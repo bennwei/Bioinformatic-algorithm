@@ -1,5 +1,5 @@
 def ReverseComplement(seq):
-    base_dict = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
+    base_dict = {'a':'t', 'c':'g', 't':'a', 'g':'c', 'u':'a', 'A':'T', 'C':'G', 'T':'A', 'G':'C', 'U':'A'}
     bases = list(seq)
     for base in bases:
         if base not in 'ATCGatcg':
